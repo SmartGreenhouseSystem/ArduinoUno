@@ -37,16 +37,6 @@ void loop()
 {
   String allData = "";
   
-  float hG = dhtGreenhouse.readHumidity();
-  if (isnan(hG)) {
-      return;
-  }
-  else 
-  {
-    str =String("GH|" + String(hG));
-    allData = allData + str;
-  }
-  
   float tG = dhtGreenhouse.readTemperature();
   if (isnan(tG)) {
       return;
@@ -57,16 +47,6 @@ void loop()
     allData = allData + '$' + str + '$';
   }
 
-  float hA = dhtAtmospheric.readHumidity();
-  if (isnan(hA)) {
-      return;
-  }
-  else 
-  {
-    str =String("AH|" + String(hA));
-    allData = allData + str;
-  }
-  
   float tA = dhtAtmospheric.readTemperature();
   if (isnan(tA)) {
       return;
@@ -77,16 +57,6 @@ void loop()
     allData = allData + '$' + str + '$';
   }
 
-  float hP = dhtPile.readHumidity();
-  if (isnan(hP)) {
-      return;
-  }
-  else 
-  {
-    str =String("PH|" + String(hP));
-    allData = allData + str;
-  }
-  
   float tP = dhtPile.readTemperature();
   if (isnan(tP)) {
       return;
@@ -97,6 +67,36 @@ void loop()
     allData = allData + '$' + str;
   }
 
+  float hG = dhtGreenhouse.readHumidity();
+  if (isnan(hG)) {
+      return;
+  }
+  else 
+  {
+    str =String("GH|" + String(hG));
+    allData = allData + str;
+  }
+  
+  float hA = dhtAtmospheric.readHumidity();
+  if (isnan(hA)) {
+      return;
+  }
+  else 
+  {
+    str =String("AH|" + String(hA));
+    allData = allData + str;
+  }
+  
+  float hP = dhtPile.readHumidity();
+  if (isnan(hP)) {
+      return;
+  }
+  else 
+  {
+    str =String("PH|" + String(hP));
+    allData = allData + str;
+  }
+  
   Serial.println(allData);
   espSerial.println(allData);
 
