@@ -43,8 +43,8 @@ void loop()
   }
   else 
   {
-    str = String("GT|" + String(tG));
-    allData = allData + str + '$';
+    str = String("G|T|°C|" + String(tG));
+    allData = allData + str + ';';
   }
 
   float tA = dhtAtmospheric.readTemperature();
@@ -53,8 +53,8 @@ void loop()
   }
   else 
   {
-    str = String("AT|" + String(tA));
-    allData = allData + str + '$';
+    str = String("A|T|°C|" + String(tA));
+    allData = allData + str + ';';
   }
 
   float tP = dhtPile.readTemperature();
@@ -63,8 +63,8 @@ void loop()
   }
   else 
   {
-    str = String("PT|" + String(tP));
-    allData = allData + str + '$';
+    str = String("P|T|°C|" + String(tP));
+    allData = allData + str + ';';
   }
 
   float hG = dhtGreenhouse.readHumidity();
@@ -73,8 +73,8 @@ void loop()
   }
   else 
   {
-    str =String("GH|" + String(hG));
-    allData = allData + str + '$';
+    str =String("G|H|%|" + String(hG));
+    allData = allData + str + ';';
   }
   
   float hA = dhtAtmospheric.readHumidity();
@@ -83,8 +83,8 @@ void loop()
   }
   else 
   {
-    str =String("AH|" + String(hA));
-    allData = allData + str + '$';
+    str =String("A|H|%|" + String(hA));
+    allData = allData + str + ';';
   }
   
   float hP = dhtPile.readHumidity();
@@ -93,7 +93,7 @@ void loop()
   }
   else 
   {
-    str =String("PH|" + String(hP));
+    str =String("P|H|%|" + String(hP));
     allData = allData + str;
   }
   
